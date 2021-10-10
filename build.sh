@@ -6,6 +6,10 @@ git submodule init
 git submodule sync
 git submodule update
 
+# fix poky for Arch
+cd poky && git apply --check ../c17_poky.patch && git apply ../c17_poky.patch
+cd ..
+
 # local.conf won't exist until this step on first execution
 source poky/oe-init-build-env
 
